@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Memory</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Mono', 'Menlo', 'Consolas', 'DejaVu Sans Mono', monospace;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #111; /* Slightly softer black */
+            color: #eee; /* Slightly softer white */
+            position: relative; /* Needed for z-indexed pseudo-elements */
+            overflow-x: hidden; /* Prevent horizontal scroll if rectangles poke out */
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed; /* Fixed so they don't scroll with content */
+            z-index: -1; /* Behind the content */
+            opacity: 0.3; /* Made more subtle */
+        }
+
+        body::before {
+            background-color: #0a0a0a; /* Darker than body bg */
+            width: 60%;
+            height: 70%;
+            top: 10%;
+            left: -10%;
+            transform: rotate(-5deg);
+        }
+
+        body::after {
+            background-color: #0f0f0f; /* Slightly lighter than ::before, still very dark */
+            width: 70%;
+            height: 65%;
+            bottom: 5%;
+            right: -15%;
+            transform: rotate(8deg);
+        }
+
+        .container {
+            max-width: 700px; /* Slightly narrower for a more focused feel */
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            text-align: left;
+            position: relative; /* Ensure content is above pseudo-elements if z-index issues */
+            z-index: 1;
+        }
+        .photo {
+            max-width: 100%;
+            height: auto;
+            margin: 2.5rem 0;
+            border: none; /* Border removed */
+            border-radius: 12px; /* Rounded corners added */
+            display: block; /* Ensure it behaves as a block for margin auto if needed */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35); /* Subtle shadow for depth */
+        }
+        .links {
+            margin-top: 2.5rem;
+            padding-left: 0; /* Remove default ul padding */
+        }
+        .links ul {
+            list-style-type: none; /* Remove bullets */
+            padding: 0;
+            margin: 0;
+        }
+        .links li {
+            margin: 0.8rem 0;
+        }
+        .links a {
+            color: #bbb; /* Slightly less bright link color */
+            text-decoration: none;
+            border-bottom: 1px solid transparent; /* Prepare for hover effect */
+            padding-bottom: 1px;
+            transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .links a:hover,
+        .links a:focus {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+        h1 {
+            font-size: 2.2rem; /* Slightly smaller for a more modern feel */
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700; /* Bolder heading */
+            color: #fff;
+        }
+        /* Optional: A small dedication/intro paragraph style */
+        .intro-text {
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>In Loving Memory</h1>
+        <!-- Optional: You can add a small paragraph here if you like -->
+        <!-- <p class="intro-text">A space to remember and celebrate a life.</p> -->
+        
+        <img src="orien_main.jpg" alt="Heroic pirate contemlates his next attack against the great nothing" class="photo">
+        
+        <div class="links">
+            <ul>
+                <li><a href="https://drive.google.com/drive/folders/1TqR2ZYMAcLVAo6TCrRR_muHidyjmeo_x" target="_blank">Google Drive (Collective Photos and Memories)</a></li>
+                <li><a href="https://flic.kr/s/aHBqjCeskE" target="_blank">Flickr Album by Monica Canilao</a></li>
+                <li><a href="https://laughingsquid.com/the-ocean-of-blood-on-newtown-creek/" target="_blank">Laughing Squid Articles (Ocean of Blood Project)</a></li>
+                <li><a href="https://www.orienmcneill.com/?fbclid=PAQ0xDSwKXQmRleHRuA2FlbQIxMQABp2DOF_FG58C_h4W89eWkgUXqKOlCcFyYKKQmZht8zM6N0OXZd7IfZypy4E_A_aem_xUSDck5i_xbVaS9l9ZW7DA" target="_blank">Orien's Personal Art Website</a></li>
+                <li><a href="https://vimeo.com/105469907" target="_blank">Vimeo Video (Berlin Project)</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1QMQisx6rs74qoV-7Bal4HLg9IJtZPkAK" target="_blank">Google Drive (Orien's Artwork and Ephemera)</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
